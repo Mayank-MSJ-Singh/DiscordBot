@@ -1,14 +1,13 @@
-import discord
-from langchain import *
-from openai import *
+from discord import Intents, Client
+from langchain import OpenAI
 import os
 
-os.environ["OPENAI_API_KEY"] = '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'
+environ["OPENAI_API_KEY"] = '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'
 
 DisGPT_llm = OpenAI()
 
 
-class MyClient(discord.Client):
+class MyClient(Client):
     async def on_ready(self):
         print(f'Logged on as {self.user}!')
 
@@ -20,8 +19,8 @@ class MyClient(discord.Client):
           channel = message.channel
           await channel.send(DisGPT_llm.predict(message.content[8:]))
 
-intents = discord.Intents.default()
+intents = Intents.default()
 intents.message_content = True
 
 client = MyClient(intents=intents)
-client.run('MTE1Mjk3MzcxMTI4NTE2NjExMg.Gi6Fxe.IA9YKut3qpbYhOs-hW2tDQhrTQU-hi0wOghbHU')
+client.run('MTE1Mjk3MzcxMTI4NTE2NjExMg.GJsQL6.1ZeqFFx5FLUmM1fRFVCtMRQTI6VQNpuDgFZUsw')
