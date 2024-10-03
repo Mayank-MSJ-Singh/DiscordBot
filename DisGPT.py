@@ -2,7 +2,7 @@ from discord import Intents, Client
 from langchain import OpenAI
 import os
 
-environ["OPENAI_API_KEY"] = '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'
+environ["OPENAI_API_KEY"] = '<Insert Your Key Here>'
 
 DisGPT_llm = OpenAI()
 
